@@ -1,24 +1,71 @@
-output "dev_ec2_1_public_ip" {
-  value = aws_instance.dev_ec2_instance_1.public_ip                                          # The actual value to be outputted
-  description = "The public IP address of the EC2 instance" # Description of what this output represents
+output "dev_vpc_id" {
+  value = module.dev_vpc.vpc_id
 }
 
-output "dev_ec2_2_public_ip" {
-  value = aws_instance.dev_ec2_instance_2.public_ip                                          # The actual value to be outputted
-  description = "The public IP address of the EC2 instance" # Description of what this output represents
+output "prod_vpc_id" {
+  value = module.prod_vpc.vpc_id
 }
 
-output "dev_ec2_1_private_ip" {
-  value = aws_instance.dev_ec2_instance_1.private_ip                                        # The actual value to be outputted
-  description = "The public IP address of the EC2 instance" # Description of what this output represents
+output "dev_public_subnet_1_id" {
+  value = module.dev_vpc.public_subnet_1_id
 }
 
-output "dev_ec2_2_private_ip" {
-  value = aws_instance.dev_ec2_instance_2.private_ip                                      # The actual value to be outputted
-  description = "The public IP address of the EC2 instance" # Description of what this output represents
+output "prod_public_subnet_1_id" {
+  value = module.prod_vpc.public_subnet_1_id
 }
 
-output "dev_db_endpoint" {
-  value = aws_db_instance.dev_postgres_instance.endpoint
-  description = "Endpoint to the Postgres database"
+output "dev_public_subnet_2_id" {
+  value = module.dev_vpc.public_subnet_2_id
+}
+
+output "prod_public_subnet_2_id" {
+  value = module.prod_vpc.public_subnet_2_id
+}
+
+output "dev_instance_ids" {
+  value = module.dev_vpc.instance_ids
+}
+
+output "prod_instance_ids" {
+  value = module.prod_vpc.instance_ids
+}
+
+output "dev_instance_private_ips" {
+  value = module.dev_vpc.instance_private_ips
+}
+
+output "prod_instance_private_ips" {
+  value = module.prod_vpc.instance_private_ips
+}
+
+output "dev_jump_server_public_ip" {
+  value = module.dev_vpc.jump_server_public_ip
+}
+
+output "prod_jump_server_public_ip" {
+  value = module.prod_vpc.jump_server_public_ip
+}
+
+output "dev_alb_arn" {
+  value = module.dev_vpc.alb_arn
+}
+
+output "prod_alb_arn" {
+  value = module.prod_vpc.alb_arn
+}
+
+output "dev_alb_dns_name" {
+  value = module.dev_vpc.alb_dns_name
+}
+
+output "prod_alb_dns_name" {
+  value = module.prod_vpc.alb_dns_name
+}
+
+output "dev_db_instance_endpoint" {
+  value = module.dev_vpc.db_instance_endpoint
+}
+
+output "prod_db_instance_endpoint" {
+  value = module.prod_vpc.db_instance_endpoint
 }
